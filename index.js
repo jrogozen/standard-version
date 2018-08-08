@@ -38,6 +38,9 @@ module.exports = function standardVersion (argv) {
     .then(() => {
       return tag(newVersion, pkg.private, args)
     })
+    .then(() => {
+      return newVersion;
+    })
     .catch((err) => {
       printError(args, err.message)
       throw err
